@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My test Project{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 50px;
+            top:0;
+            overflow: hidden;
+            
+        }
+
+        header {
+            background-color: #fff;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+         
+            margin: auto;
+            overflow:hidden;
+        }
+
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            color: #007BFF;
+        }
+
+        .content {
+            margin-top: 60px;
+            padding: 10px;
+        }
+
+        .explanation p {
+        margin-bottom: 16px;
+    }
+
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .nav-link {
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div>
+                <a href="{% url 'map' %}" class="nav-link">Map</a>
+                <a href="{% url 'about' %}" class="nav-link">About</a>
+                <a href="{% url 'add_spot' %}" class="nav-link">Submit A New Place</a>
+
+            </div>
+            <!-- Future site for additional header elements (search, login, etc.) -->
+        </div>
+    </header>
+    <div class="content">
+        {% block content %}
+        <!-- The unique content of each page will go here -->
+        {% endblock %}
+    </div>
+</body>
+</html>

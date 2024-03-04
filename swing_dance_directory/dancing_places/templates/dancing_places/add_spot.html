@@ -1,0 +1,75 @@
+{% extends "dancing_places/base.html" %}
+
+{% block title %}Map{% endblock %}
+
+{% block content %}
+<div style="display: flex; justify-content: center; padding: 20px;">
+    <div style="flex: 1; max-width: 600px; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); margin-right: 20px;">
+        <form method="post" style="display: flex; flex-direction: column;">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+    <div class="explanation" style="flex: 1; max-width: 400px; padding: 20px; background: #f9f9f9; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+        <h2>Submit your favorite dance spots</h2>
+        <p>Use this form to submit places that have a good country swing dancing crowd.</p>
+        <p>Be as descriptive as possible to help others understand why this spot is great for swing dancing. Include information like the type of establishment, atmosphere, and what nights they have swing dancing. It is also helpfull to include if they require a cover charge.</p>
+        <p>Once submitted, your spot will be reviewed before it appears on the map. This process usually takes a few days.</p>
+    </div>
+</div>
+<style>
+    body, html {
+            overflow: visible;           
+        }
+    form {
+        background-color: #ffffff;
+        padding: 10px 60px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        max-width: 500px;
+        margin: 40px auto;
+        font-size: 16px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: .5rem;
+        font-weight: 600;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        margin-top: 5px;
+    }
+    input:focus, textarea:focus {
+        outline: none;
+        border-color: #007BFF;
+        box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+    }
+    .submit-btn {
+        background-color: #c3cbd3;
+        color: #000000;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color .3s ease;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 10px;
+        box-shadow: 0 4px 6px rgba(0, 123, 255, 0.1);
+        
+    }
+    .submit-btn:hover {
+        background-color: #666f78;
+        transition: background-color 0.3s ease;
+    }
+</style>
+
+{% endblock %}
+

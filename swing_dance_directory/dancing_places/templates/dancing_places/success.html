@@ -1,0 +1,14 @@
+{% extends "dancing_places/base.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<head>
+    <title>Submission Received</title>
+</head>
+<body>
+    <h1>Thank you for your submission!</h1>
+    <p>Your spot has been submitted for review. Once reviewed, it may appear on the map.</p>
+    <a href="{% url 'add_spot' %}" class="nav-link">Make another submission</a>
+</body>
+{% endblock %}
