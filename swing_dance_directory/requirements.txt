@@ -1,6 +1,7 @@
-Django==5.0.2
-django_environ==0.11.2
-folium==0.15.1
-pandas==1.5.3
+Django
+django_environ
+folium
+pandas
 gunicorn
 psycopg2-binary
+dj_database_url
