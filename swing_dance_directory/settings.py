@@ -86,4 +86,10 @@ WSGI_APPLICATION = 'swing_dance_directory.wsgi.application'
 
 STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
 
-#gunicorn swing_dance_directory:application --log-level debug
+CSRF_COOKIE_SECURE = True
+
+SESSION_COOKIE_SECURE = True
+
+
+
+#use this terminal command for debugging: gunicorn swing_dance_directory:application --log-level debug
