@@ -17,7 +17,7 @@ environ.Env.read_env(env_file=str(BASE_DIR / '.env'))
 SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['find-country-swing-2-production.up.railway.app','.localhost', '127.0.0.1', '[::1]']
+ALLOWED_HOSTS = ['find-country-swing.com','find-country-swing.up.railway.app','find-country-swing-2-production.up.railway.app','.localhost', '127.0.0.1', '[::1]']
 
 DATABASES = {
     'default': {
