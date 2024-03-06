@@ -1,1 +1,1 @@
-web: gunicorn find_country_swing_2.wsgi
+web: gunicorn swing_dance_directory.wsgi:application

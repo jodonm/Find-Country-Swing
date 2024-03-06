@@ -77,7 +77,9 @@ if 'DATABASE_URL' in os.environ:
     )
 
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'static'
 
 
 WSGI_APPLICATION = 'swing_dance_directory.wsgi.application'
+
+#gunicorn swing_dance_directory:application --log-level debug
