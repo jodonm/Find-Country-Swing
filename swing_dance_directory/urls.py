@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from dancing_places.views import redirect_to_map
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('dancing_places/', include('dancing_places.urls')),  # Include your app's URLs
-    # You can add more paths for other apps here
+    path('dancing_places/', include('dancing_places.urls')), 
 ]
 
+handler404 = 'dancing_places.views.redirect_to_map'

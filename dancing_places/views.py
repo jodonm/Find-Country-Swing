@@ -81,3 +81,6 @@ def add_spot(request):
 
 def submission_success(request):
     return render(request, 'success.html')
+
+def redirect_to_map(request, exception=None):
+    return redirect('map')
