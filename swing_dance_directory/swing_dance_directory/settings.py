@@ -61,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'swing_dance_directory.urls'
@@ -75,8 +76,8 @@ if 'DATABASE_URL' in os.environ:
         conn_health_checks=True,
     )
 
-STATIC_URL = '/static/'
 
-STATIC_ROOT = '/Users/jodonmontgomery/Downloads/Pythonapps/swing_dance_directory/www/dancing_places/static'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 WSGI_APPLICATION = 'swing_dance_directory.wsgi.application'
