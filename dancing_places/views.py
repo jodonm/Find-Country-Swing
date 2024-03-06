@@ -3,7 +3,6 @@ import folium
 from django.http import HttpResponse
 from .forms import SpotForm
 from django.contrib import messages
-from django.views.decorators.csrf import csrf_exempt
 
 
 def map_view(request):
@@ -67,7 +66,6 @@ def map_view(request):
 def about_view(request):
     return render(request, 'dancing_places/about.html')
 
-@csrf_exempt
 def add_spot(request):
     if request.method == 'POST':
         form = SpotForm(request.POST)
