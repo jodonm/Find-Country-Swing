@@ -90,6 +90,9 @@ CSRF_COOKIE_SECURE = True
 
 SESSION_COOKIE_SECURE = True
 
+CSRF_COOKIE_DOMAIN = '.find-country-swing.com'
+
+
 
 
 #use this terminal command for debugging: gunicorn swing_dance_directory:application --log-level debug
