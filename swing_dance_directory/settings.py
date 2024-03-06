@@ -92,6 +92,12 @@ SESSION_COOKIE_SECURE = True
 
 CSRF_COOKIE_DOMAIN = '.find-country-swing.com'
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://find-country-swing.com',
+    'http://find-country-swing.com'
+]
+
+
 
 
 
