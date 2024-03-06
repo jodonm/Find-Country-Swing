@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dancing_places'
+    'dancing_places',
+    'swing_dance_directory',
 ]
 
 MIDDLEWARE = [
@@ -77,9 +78,12 @@ if 'DATABASE_URL' in os.environ:
     )
 
 
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'static/'
 
 
 WSGI_APPLICATION = 'swing_dance_directory.wsgi.application'
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
 
 #gunicorn swing_dance_directory:application --log-level debug
