@@ -74,11 +74,6 @@ Navigate to `http://127.0.0.1:8000/dancing_places/map` in your browser to view t
 Refer to the platform-specific documentation for deploying Django applications. For example, when deploying to Railway, ensure you set the required environment variables in the Railway app settings dashboard, including `DJANGO_SETTINGS_MODULE`, `SECRET_KEY`, and `DATABASE_URL`.
 
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-
 ---
 
  
