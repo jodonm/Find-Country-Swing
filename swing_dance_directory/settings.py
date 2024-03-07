@@ -16,7 +16,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Reading .env file
 #environ.Env.read_env(env_file=str(BASE_DIR / '.env'))
 
-dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+#dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+#load_dotenv(dotenv_path)
+
+dotenv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env')
 load_dotenv(dotenv_path)
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "default-secret-key")
