@@ -30,24 +30,24 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = ['find-country-swing.com','find-country-swing.up.railway.app','find-country-swing-2-production.up.railway.app','.localhost', '127.0.0.1', '[::1]']
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-        # Correct the path for the SQLite URL to use BASE_DIR
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB', 'default_db_name'),  # Use Railway's provided variable or a default
-        'USER': os.environ.get('POSTGRES_USER', 'default_user'),  # Use Railway's provided variable or a default
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'default_password'),  # Use Railway's provided variable or a default
-        'HOST': os.environ.get('PGHOST', 'localhost'),  # Use Railway's provided variable or a default
-        'PORT': os.environ.get('PGPORT', '5432'),  # Use Railway's provided variable or a default
+        'ENGINE': 'django.db.backends.sqlite3',
+        # Correct the path for the SQLite URL to use BASE_DIR
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ.get('POSTGRES_DB', 'default_db_name'),  # Use Railway's provided variable or a default
+#         'USER': os.environ.get('POSTGRES_USER', 'default_user'),  # Use Railway's provided variable or a default
+#         'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'default_password'),  # Use Railway's provided variable or a default
+#         'HOST': os.environ.get('PGHOST', 'localhost'),  # Use Railway's provided variable or a default
+#         'PORT': os.environ.get('PGPORT', '5432'),  # Use Railway's provided variable or a default
+#     }
+# }
 
 TEMPLATES = [
     {
