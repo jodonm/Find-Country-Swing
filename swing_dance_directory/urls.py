@@ -20,7 +20,7 @@ from dancing_places.views import redirect_to_map
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('dancing_places/', include('dancing_places.urls')), 
+    path('', include('dancing_places.urls')), 
 ]
 
 handler404 = 'dancing_places.views.redirect_to_map'
