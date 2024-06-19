@@ -3,7 +3,31 @@
 {% block title %}Add_Spot_Redirect{% endblock %}
 
 {% block content %}
+
 <head>
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+        function openInNewTab(url) {
+            var win = window.open(url, '_blank');
+            win.focus();
+        }
+
+
+        window.onload = function() {
+            openInNewTab("https://docs.google.com/forms/d/e/1FAIpQLSf_Rm4w6S5m2BlzidG01DdH4NBXcdm3ZrXDGsd7jmklgP1H_g/viewform?usp=sf_link");
+            setTimeout(function() {
+                window.location.href = "/map"; // Change this to the URL you want to redirect to
+            }, 6000); // 15000 milliseconds = 15 seconds
+        }
+    </script>
+</head>
+<body>
+    <p>We are redirecting you to a Google Form. If nothing happens, <button onclick="openInNewTab('https://docs.google.com/forms/d/e/1FAIpQLSf_Rm4w6S5m2BlzidG01DdH4NBXcdm3ZrXDGsd7jmklgP1H_g/viewform?usp=sf_link')">click here</button>.</p>
+</body>
+
+
+
+<!-- <head>
     <title>Redirecting...</title>
     <script type="text/javascript">
         window.onload = function() {
@@ -14,5 +38,5 @@
 </head>
 <body>
     <p>If you are not redirected automatically, <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_Rm4w6S5m2BlzidG01DdH4NBXcdm3ZrXDGsd7jmklgP1H_g/viewform?usp=sf_link" target="_blank">click here</a>.</p>
-</body>
+</body> -->
 {% endblock %}
