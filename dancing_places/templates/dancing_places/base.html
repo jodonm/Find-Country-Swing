@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My test Project{% endblock %}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             font-family: 'Open Sans', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #FAF3E0; /* Light beige background */
+            color: #5A3E2B; /* Dark brown font color */
             line-height: 50px;
-            top:0;
+            top: 0;
             overflow: hidden;
-            
         }
 
         header {
-            background-color: #fff;
-            color: #333;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: #A0522D; /* Sienna brown */
+            color: #FAF3E0; /* Light beige font color for contrast */
+            box-shadow: 0 2px 4px rgba(90, 62, 43, 0.3); /* Brown shadow */
             position: fixed;
             width: 100%;
             top: 0;
@@ -35,20 +34,19 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 20px;
-         
             margin: auto;
-            overflow:hidden;
+            overflow: hidden;
         }
 
         .nav-link {
-            color: #333;
+            color: #FAF3E0; /* Light beige for links */
             text-decoration: none;
             margin: 0 15px;
             font-weight: 600;
         }
 
         .nav-link:hover {
-            color: #007BFF;
+            color: #D2691E; /* Burnt orange for hover */
         }
 
         .content {
@@ -57,8 +55,8 @@
         }
 
         .explanation p {
-        margin-bottom: 16px;
-    }
+            margin-bottom: 16px;
+        }
 
         @media (max-width: 992px) {
             .container {
@@ -84,7 +82,6 @@
                 <a href="{% url 'map' %}" class="nav-link">Map</a>
                 <a href="{% url 'about' %}" class="nav-link">About</a>
                 <a href="{% url 'add_spot' %}" class="nav-link">Submit A New Place</a>
-
             </div>
             <!-- Future site for additional header elements (search, login, etc.) -->
         </div>
