@@ -28,7 +28,8 @@ def map_view(request):
         ([30.240884013131655, -97.78520732429344], "The Broken Spoke: Traditional Texas Honky Tonk. This bar has lots of historical significance with artists like Willie Nelson and George Strait playing here in their youth. $10 cash only cover for the dance floor, bar area is free. <a href='https://www.brokenspokeaustintx.net/' target='_blank'>Website</a>"),
         ([30.083975942492884, -97.82635428177994], "Mavericks Dance Hall in Buda: Very large dance floor with DJ most nights. Younger crowd. Very modern with projector screens and light shows, has good A/C. $7 Cover. <a href='http://mavericksdancehall.com/' target='_blank'>Website</a>"),
         ([36.19854952092901, -86.2908059147214], "Cahoots Dancehall and Honkytonk: Home of free beer. Large dance floor and very very popular. Has a younger crowd. DJ will call out which songs are line dance only or swing dance only. $15 cover but free beer until midnight <a href='http://cahootslebanon.com/' target='_blank'>Website</a>"),
-        
+        ([36.162732795662244, -86.77543145737778], "Wildhorse Saloon: This was one of the only places to dance on Music Row, very large dance floor and live music. It is currently being transformed into Luke Combs bar. <a href='https://www.category10.com' target='_blank'>Website</a>"),
+
         # Add more custom locations with their descriptions
     ]
 
