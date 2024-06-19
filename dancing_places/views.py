@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 import folium
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .forms import SpotForm
 from django.contrib import messages
 
@@ -66,18 +66,25 @@ def map_view(request):
 def about_view(request):
     return render(request, 'dancing_places/about.html')
 
+# legacy code for internal user submit form, replaced by redirect to google form
+# def add_spot(request):
+#     if request.method == 'POST':
+#         form = SpotForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('submission_success')  # Redirect to the success page
+#         else:
+#             # This else block is optional and can be used to provide feedback on why the form is not valid
+#             messages.error(request, 'Please correct the errors below.')
+#     else:
+#         form = SpotForm()
+#     return render(request, 'add_spot.html', {'form': form})
+
+# def add_spot(request):
+#     return render(request, 'dancing_places/form.html')
+
 def add_spot(request):
-    if request.method == 'POST':
-        form = SpotForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('submission_success')  # Redirect to the success page
-        else:
-            # This else block is optional and can be used to provide feedback on why the form is not valid
-            messages.error(request, 'Please correct the errors below.')
-    else:
-        form = SpotForm()
-    return render(request, 'add_spot.html', {'form': form})
+    return render(request, 'dancing_places/redirect.html')
 
 def submission_success(request):
     return render(request, 'success.html')

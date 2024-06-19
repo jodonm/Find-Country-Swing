@@ -1,0 +1,18 @@
+{% extends "dancing_places/base.html" %}
+
+{% block title %}Add_Spot_Redirect{% endblock %}
+
+{% block content %}
+<head>
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            window.open("https://docs.google.com/forms/d/e/1FAIpQLSf_Rm4w6S5m2BlzidG01DdH4NBXcdm3ZrXDGsd7jmklgP1H_g/viewform?usp=sf_link", "_blank");
+            window.location.href = "/";
+        }
+    </script>
+</head>
+<body>
+    <p>If you are not redirected automatically, <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_Rm4w6S5m2BlzidG01DdH4NBXcdm3ZrXDGsd7jmklgP1H_g/viewform?usp=sf_link" target="_blank">click here</a>.</p>
+</body>
+{% endblock %}
