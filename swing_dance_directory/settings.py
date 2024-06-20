@@ -108,22 +108,5 @@ WSGI_APPLICATION = 'swing_dance_directory.wsgi.application'
 
 STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
 
-<<<<<<< Updated upstream
-CSRF_COOKIE_SECURE = True
-
-SESSION_COOKIE_SECURE = True
-
-CSRF_COOKIE_DOMAIN = '.find-country-swing.com'
-
-CSRF_TRUSTED_ORIGINS = [
-    'https://find-country-swing.com',
-    'http://find-country-swing.com'
-]
-
-
-
-#use this terminal command for debugging: gunicorn swing_dance_directory.wsgi:application --log-level debug
-=======
 
 #gunicorn swing_dance_directory:application --log-level debug
->>>>>>> Stashed changes
