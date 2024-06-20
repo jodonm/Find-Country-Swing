@@ -1,32 +1,21 @@
 from pathlib import Path
 import environ
 import os
-import gunicorn
-from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Initialize Django-environ
-#env = environ.Env(
+env = environ.Env(
     # set casting, default value
-   # DEBUG=(bool, False)
-#)
+    DEBUG=(bool, False)
+)
 
 # Reading .env file
-#environ.Env.read_env(env_file=str(BASE_DIR / '.env'))
+environ.Env.read_env(env_file=str(BASE_DIR / '.env'))
 
-#dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
-#load_dotenv(dotenv_path)
-
-dotenv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env')
-load_dotenv(dotenv_path)
-
-SECRET_KEY = os.environ.get("SECRET_KEY", "default-secret-key")
-DEBUG = os.environ.get("DEBUG", "False") == "True"
-
-#SECRET_KEY = env('SECRET_KEY')
-#DEBUG = env('DEBUG')
+SECRET_KEY = env('SECRET_KEY')
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ['find-country-swing.com','find-country-swing.up.railway.app','find-country-swing-2-production.up.railway.app','.localhost', '127.0.0.1', '[::1]']
 
@@ -37,17 +26,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.environ.get('POSTGRES_DB', 'default_db_name'),  # Use Railway's provided variable or a default
-#         'USER': os.environ.get('POSTGRES_USER', 'default_user'),  # Use Railway's provided variable or a default
-#         'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'default_password'),  # Use Railway's provided variable or a default
-#         'HOST': os.environ.get('PGHOST', 'localhost'),  # Use Railway's provided variable or a default
-#         'PORT': os.environ.get('PGPORT', '5432'),  # Use Railway's provided variable or a default
-#     }
-# }
 
 TEMPLATES = [
     {
@@ -107,6 +85,5 @@ WSGI_APPLICATION = 'swing_dance_directory.wsgi.application'
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
-
 
 #gunicorn swing_dance_directory:application --log-level debug
