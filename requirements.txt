@@ -15,6 +15,7 @@ numpy
 packaging
 pandas
 psycopg2-binary
+<<<<<<< Updated upstream
 python-dateutil
 python-dotenv
 pytz
@@ -26,3 +27,7 @@ tzdata
 urllib3
 whitenoise
 xyzservices
+=======
+dj_database_url
+whitenoise
+>>>>>>> Stashed changes
