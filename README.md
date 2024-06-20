@@ -4,6 +4,8 @@ Welcome to the GitHub repository for my Find Country Swing project! This Django-
 
 I created this website as a way to for me to learn the Django platform and develop my skills in web design, database managment, and python logic. This was primarily a hobby project but I hope that it is useful for others who enjoy country swing dance.
 
+You can access the website at [https://find-country-swing.com](find-country-swing.com)
+
 <img width="1117" alt="Screenshot 2024-03-05 at 11 47 49 PM" src="https://github.com/jodonm/Find-Country-Swing/assets/155393989/40cde9a7-8c41-4b23-bbd5-925df8c51fba">
 
 ## Features
@@ -67,7 +69,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Navigate to `http://127.0.0.1:8000/dancing_places/map` in your browser to view the app.
+Navigate to `http://127.0.0.1:8000/` in your browser to view the app.
 
 ## Deployment
 
