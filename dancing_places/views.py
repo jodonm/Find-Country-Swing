@@ -92,7 +92,7 @@ def about_view(request):
 #     return render(request, 'dancing_places/form.html')
 
 def add_spot(request):
-    return render(request, 'dancing_places/redirect.html')
+    return render(request, 'dancing_places/form_page.html')
 
 def submission_success(request):
     return render(request, 'success.html')
