@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 import folium
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .forms import SpotForm
 from django.contrib import messages
 
@@ -22,10 +22,18 @@ def map_view(request):
         ([46.20845072481442, -119.12093024559294], "Branding Iron: Live bands and line dance lessons Friday & Saturday <a href='https://brandingironnightclub.com/' target='_blank'>Website</a>"),
         ([45.3799076112494, -122.7608340607681], "Bushwackers: Largest country swing bar in Portland. Lessons Thursday through Saturday <a href='http://www.bushwhackerssaloon.com/' target='_blank'>Website</a>"),
         ([45.59734393114103, -122.66874347632411], "Ponderosa Bar & Grill (AKA Jubitz): Country swing dancing at a truck-stop bar. Old-timey feel. <a href='http://jubitz.com/ponderosa-lounge-country-bar/' target='_blank'>Website</a>"),
+        ([21.37831223400282, -157.93514207193752], "Whiskey Dix Saloon: Only country bar in Hawaii. Lots of dancers from Pearl Harbor. Very welcoming group with lots of dancing. $5 cover. <a href='https://whiskeydixhi.com' target='_blank'>Website</a>"),
+        ([44.085139727957895, -121.29494206647543], "The Cross-Eyed Cricket Watering Hole: Only country bar in Bend. Younger crowd with lots or regulars. Lots of line-dancing. <a href='https://www.thecrosseyedcricketbend.com' target='_blank'>Website</a>"),
+        ([30.26260567021625, -97.72699678443963], "The White Horse: Honky Tonk with live music, the dance style here is closer to what you find on the west-coast than traditional Texas two-step. Very welcoming crowd. $10 cash only cover. <a href='https://www.thewhitehorseaustin.com/events' target='_blank'>Website</a>"),
+        ([30.240884013131655, -97.78520732429344], "The Broken Spoke: Traditional Texas Honky Tonk. This bar has lots of historical significance with artists like Willie Nelson and George Strait playing here in their youth. $10 cash only cover for the dance floor, bar area is free. <a href='https://www.brokenspokeaustintx.net/' target='_blank'>Website</a>"),
+        ([30.083975942492884, -97.82635428177994], "Mavericks Dance Hall in Buda: Very large dance floor with DJ most nights. Younger crowd. Very modern with projector screens and light shows, has good A/C. $7 Cover. <a href='http://mavericksdancehall.com/' target='_blank'>Website</a>"),
+        ([36.19854952092901, -86.2908059147214], "Cahoots Dancehall and Honkytonk: Home of free beer. Large dance floor and very very popular. Has a younger crowd. DJ will call out which songs are line dance only or swing dance only. $15 cover but free beer until midnight <a href='http://cahootslebanon.com/' target='_blank'>Website</a>"),
+        ([36.162732795662244, -86.77543145737778], "Wildhorse Saloon: This was one of the only places to dance on Music Row, very large dance floor and live music. It is currently being transformed into Luke Combs bar. <a href='https://www.category10.com' target='_blank'>Website</a>"),
+
         # Add more custom locations with their descriptions
     ]
 
-    # Create the map with custom markers (logic adapted from your Streamlit app)
+    # Create the map with custom markers 
     if locations_data:
         locations = [location for location, _ in locations_data if location]
         map_center = [sum([lat for lat, _ in locations]) / len(locations), sum([lon for _, lon in locations]) / len(locations)]
@@ -66,18 +74,25 @@ def map_view(request):
 def about_view(request):
     return render(request, 'dancing_places/about.html')
 
+# legacy code for internal user submit form, replaced by redirect to google form
+# def add_spot(request):
+#     if request.method == 'POST':
+#         form = SpotForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('submission_success')  # Redirect to the success page
+#         else:
+#             # This else block is optional and can be used to provide feedback on why the form is not valid
+#             messages.error(request, 'Please correct the errors below.')
+#     else:
+#         form = SpotForm()
+#     return render(request, 'add_spot.html', {'form': form})
+
+# def add_spot(request):
+#     return render(request, 'dancing_places/form.html')
+
 def add_spot(request):
-    if request.method == 'POST':
-        form = SpotForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('submission_success')  # Redirect to the success page
-        else:
-            # This else block is optional and can be used to provide feedback on why the form is not valid
-            messages.error(request, 'Please correct the errors below.')
-    else:
-        form = SpotForm()
-    return render(request, 'add_spot.html', {'form': form})
+    return render(request, 'dancing_places/redirect.html')
 
 def submission_success(request):
     return render(request, 'success.html')

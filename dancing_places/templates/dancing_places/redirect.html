@@ -1,0 +1,23 @@
+{% extends "dancing_places/base.html" %}
+
+{% block title %}Submit A New Place{% endblock %}
+
+{% block body_overflow %}auto{% endblock %}
+
+{% block content %}
+    <div style="display: flex; justify-content: center; align-items: flex-start; padding: 20px; min-height:1200px; overflow: auto;">
+        <iframe id="google-form-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSf_Rm4w6S5m2BlzidG01DdH4NBXcdm3ZrXDGsd7jmklgP1H_g/viewform?embedded=true" style="height:1800px;width:100%;overflow:hidden;" frameborder="0" marginheight="0" marginwidth="0" style="border: none;">Loading…</iframe>
+    </div>
+{% endblock %}
+
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: auto; /* Ensure the body can scroll */
+    }
+    .content {
+        min-height: 1200px; /* Ensure the content area is tall enough */
+    }
+</style>
