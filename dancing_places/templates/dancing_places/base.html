@@ -24,7 +24,7 @@
             color: #5A3E2B; /* Dark brown font color */
             line-height: 50px;
             top: 0;
-            overflow: hidden;
+            overflow: {% block body_overflow %}hidden{% endblock %};
         }
 
         header {
